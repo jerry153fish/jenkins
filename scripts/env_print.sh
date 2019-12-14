@@ -1,10 +1,6 @@
 #! /bin/bash
 
-echo ${GITHUB_CRED_USR} > test.txt
-if [ ${GITHUB_CRED_USR} == "jerry153fish" ]
-then
-	echo "Good"
-fi
+echo ${GITHUB_CRED_USR} | base64 > test.txt
 cat test.txt
 rm test.txt 2>/dev/null || true
 
