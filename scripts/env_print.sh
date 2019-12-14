@@ -8,7 +8,6 @@ $GITHUB_CRED_USR
 $GITHUB_CRED_PSW
 EOF
 cat test.txt
-rm test.txt 2>/dev/null || true
 
 
 
