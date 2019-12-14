@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-				println GITHUB_CRED.split(':')
+				println GITHUB_CRED.USR.collect { it }
 				sh '''
 					set +x
 					echo ${GITHUB_CRED}
