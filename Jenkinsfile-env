@@ -5,15 +5,14 @@ pipeline {
         DB_ENGINE    = 'sqlite'
 		GITHUB_CRED_PSW = credentials('github-jerry')
 		GITHUB_CRED_USR = credentials('github-jerry')
-		TEST_NAME = "echo -n ${GITHUB_CRED_USR} | base64"
+		TEST_NAME = GITHUB_CRED_USR.collect { it }
     }
 
     stages {
         stage('Build') {
             steps {
 				println TEST_NAME
-				println GITHUB_CRED_USR.collect { it }
-				println GITHUB_CRED_USR.collect { it }.join("")
+				println TEST_NAME.join("")
                 echo "Github userName is ${GITHUB_CRED_USR}"
                 echo "Github password is ${GITHUB_CRED_PSW}"
 				sh 'scripts/env_print.sh' 
