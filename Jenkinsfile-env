@@ -12,6 +12,8 @@ pipeline {
             steps {
                 echo "Github userName is ${GITHUB_CRED_USR}"
                 echo "Github password is ${GITHUB_CRED_PSW}"
+				sh "echo ${GITHUB_CRED_PSW}"
+				sh 'scripts/env_print.sh' 
             }
         }
     }
