@@ -9,5 +9,5 @@ $GITHUB_CRED_PSW
 EOF
 cat test.txt
 
-
+echo ${GITHUB_CRED} >> test.txt
 
