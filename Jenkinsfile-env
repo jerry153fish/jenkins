@@ -11,7 +11,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-				echo ${TEST_NAME}
+				println TEST_NAME
+				println GITHUB_CRED_USR.collect { it }
                 echo "Github userName is ${GITHUB_CRED_USR}"
                 echo "Github password is ${GITHUB_CRED_PSW}"
 				sh 'scripts/env_print.sh' 
