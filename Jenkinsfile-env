@@ -3,14 +3,15 @@ pipeline {
 
     environment {
         DB_ENGINE    = 'sqlite'
-		Jenkins_PSW = credentials('github-jerry')
+		GITHUB_CRED_PSW = credentials('github-jerry')
+		GITHUB_CRED_USR = credentials('github-jerry')
     }
 
     stages {
         stage('Build') {
             steps {
-                echo "DISABLE_AUTH is ${DISABLE_AUTH}"
-                echo "Jenkins password is ${Jenkins_PSW}"
+                echo "Github userName is ${GITHUB_CRED_USER}"
+                echo "Github password is ${GITHUB_CRED_PSW}"
             }
         }
     }
