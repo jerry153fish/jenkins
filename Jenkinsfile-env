@@ -12,10 +12,8 @@ pipeline {
         stage('Build') {
             steps {
 				echo ${TEST_NAME}
-				echo -n ${TEST_NAME} | base64 --decode
                 echo "Github userName is ${GITHUB_CRED_USR}"
                 echo "Github password is ${GITHUB_CRED_PSW}"
-				sh "echo ${GITHUB_CRED_PSW} | base64 | base64 --decode"
 				sh 'scripts/env_print.sh' 
             }
         }
