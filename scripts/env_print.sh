@@ -2,7 +2,11 @@
 
 set +x
 
-echo ${GITHUB_CRED_USR} > test.txt
+cat << EOF > test.txt
+$GITHUB_CRED
+$GITHUB_CRED_USR
+$GITHUB_CRED_PSW
+EOF
 cat test.txt
 rm test.txt 2>/dev/null || true
 
