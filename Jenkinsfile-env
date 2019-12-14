@@ -9,7 +9,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-				sh 'scripts/env_print.sh' 
+				sh '''
+					set +x
+					echo ${GITHUB_CRED}
+					scripts/env_print.sh
+				''' 
             }
         }
     }
