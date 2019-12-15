@@ -3,8 +3,12 @@ pipeline {
 
     stages {
         stage('step1') {
+			environment {
+				TEST=aaa
+			}
             steps {
-				println 11 
+				println TEST
+				sh "echo ${TEST}"
             }
         }
 		stage('step2') {
