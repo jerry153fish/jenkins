@@ -12,12 +12,10 @@ pipeline {
 				println 22
             }
         }
-		stage('step2') {
+		stage('step3') {
 			steps {
 				println 33
 			}
         }
-		
-
     }
 }
