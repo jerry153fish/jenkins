@@ -1,0 +1,25 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('step1') {
+			environment {
+				TEST=aaa
+			}
+            steps {
+				println TEST
+				sh "echo ${TEST}"
+            }
+        }
+		stage('step2') {
+            steps {
+				println 22
+            }
+        }
+		stage('step3') {
+			steps {
+				println 33
+			}
+        }
+    }
+}
